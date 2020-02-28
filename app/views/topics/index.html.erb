@@ -12,10 +12,12 @@
               <%= link_to favorites_path(topic_id: topic.id), method: :post do %> 
                 <div class="heart"></div>
               <% end %>
+              <%= topic.favorite_users.count %>
             <% else %>
               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
                 <div class="favorite-heart"></div>
               <% end %>
+              <%= topic.favorite_users.count %>
             <% end %>
             <%= link_to new_topic_comment_path(topic_id: topic.id) do %>
               <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
